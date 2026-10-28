@@ -1,0 +1,58 @@
+import type { Task } from "../types/api";
+
+export const tasks: Task[] = [
+  {
+    id: "1",
+    title: "Test yolo",
+    description: null,
+    status: "TODO",
+    priority: "HIGH",
+    dueDate: "2026-10-16T07:57:28.581Z",
+    projectId: "p1",
+  },
+  {
+    id: "2",
+    title: "Test yolo",
+    description: "Une description de task 2",
+    status: "IN_PROGRESS",
+    priority: "LOW",
+    dueDate: "2026-10-16T07:57:28.581Z",
+    projectId: "p1",
+  },
+  {
+    id: "3",
+    title: "Test yolo",
+    description: null,
+    status: "TODO",
+    priority: "HIGH",
+    dueDate: "2026-10-16T07:57:28.581Z",
+    projectId: "p1",
+  },
+  {
+    id: "4",
+    title: "Test yolo",
+    description: "Une description de task 4",
+    status: "IN_PROGRESS",
+    priority: "LOW",
+    dueDate: "2026-10-16T07:57:28.581Z",
+    projectId: "p1",
+  },
+  {
+    id: "5",
+    title: "Test yolo",
+    description: "Une description de task 5",
+    status: "DONE",
+    priority: "MEDIUM",
+    dueDate: "2026-10-16T07:57:28.581Z",
+    projectId: "p1",
+  },
+  {
+    id: "6",
+    title: "Test yolo",
+    description: null,
+    status: "TODO",
+    priority: "MEDIUM",
+    dueDate: null,
+    projectId: "p1",
+  },
+];

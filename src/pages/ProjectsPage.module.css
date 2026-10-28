@@ -1,0 +1,7 @@
+/* src/pages/ProjectsPage.module.css */
+/* Dupliqué de HomePage pour l'instant : le layout commun arrive en 1.2 (PageLayout) */
+.main {
+  padding: 2rem;
+  max-width: 60rem;
+  margin-inline: auto;
+}

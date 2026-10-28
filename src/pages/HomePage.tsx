@@ -2,7 +2,6 @@
 import styles from "./HomePage.module.css"; // CSS Modules : équivalent de <style module>
 
 export default function HomePage() {
-  console.log("HomePage render"); // temporaire : pour observer StrictMode
   return (
     // <>…</> est un fragment : il regroupe sans ajouter d'élément au DOM (détaillé en 1.1)
     <>

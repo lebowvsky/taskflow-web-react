@@ -1,6 +1,8 @@
 // src/App.tsx
-import HomePage from "./pages/HomePage.tsx";
+import ProjectDetailPage from "./pages/ProjectDetailPage";
+import ProjectsPage from "./pages/ProjectsPage";
 
 export default function App() {
-  return <HomePage />;
+  // Une seule page affichée à la fois en attendant React Router (3.1)
+  return <ProjectDetailPage />;
 }
