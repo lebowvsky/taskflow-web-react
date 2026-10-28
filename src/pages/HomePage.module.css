@@ -1,0 +1,14 @@
+/* src/pages/HomePage.module.css */
+.header {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+}
+.brand {
+  margin: 0;
+  font-weight: 700;
+}
+.main {
+  padding: 2rem;
+  max-width: 60rem;
+  margin-inline: auto;
+}
