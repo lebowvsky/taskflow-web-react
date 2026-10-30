@@ -1,0 +1,19 @@
+/* src/components/ui/EmptyState.module.css */
+.emptyState {
+  padding: 2rem;
+  text-align: center;
+  border: 1px dashed color-mix(in srgb, currentColor 30%, transparent);
+  border-radius: 0.5rem;
+}
+.title {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+.description {
+  margin: 0 0 1rem;
+}
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}

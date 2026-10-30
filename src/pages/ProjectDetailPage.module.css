@@ -1,0 +1,14 @@
+/* src/pages/ProjectDetailPage.module.css */
+/* Uniquement des classes : un sélecteur d'élément serait global */
+.main {
+  padding: 2rem;
+  max-width: 60rem;
+  margin-inline: auto;
+}
+.title {
+  margin-bottom: 0.25rem;
+}
+.count {
+  margin: 0 0 1.5rem;
+  color: color-mix(in srgb, currentColor 70%, transparent);
+}

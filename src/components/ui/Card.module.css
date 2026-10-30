@@ -1,0 +1,15 @@
+/* src/components/ui/Card.module.css */
+.card {
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  border-radius: 0.5rem;
+}
+.title {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+}
+.footer {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}

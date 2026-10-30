@@ -3,7 +3,7 @@ import type { Task } from "../types/api";
 export const tasks: Task[] = [
   {
     id: "1",
-    title: "Test yolo",
+    title: "Test yolo 1",
     description: null,
     status: "TODO",
     priority: "HIGH",
@@ -12,7 +12,7 @@ export const tasks: Task[] = [
   },
   {
     id: "2",
-    title: "Test yolo",
+    title: "Test yolo 2",
     description: "Une description de task 2",
     status: "IN_PROGRESS",
     priority: "LOW",
@@ -21,7 +21,7 @@ export const tasks: Task[] = [
   },
   {
     id: "3",
-    title: "Test yolo",
+    title: "Test yolo 3",
     description: null,
     status: "TODO",
     priority: "HIGH",
@@ -30,7 +30,7 @@ export const tasks: Task[] = [
   },
   {
     id: "4",
-    title: "Test yolo",
+    title: "Test yolo 4",
     description: "Une description de task 4",
     status: "IN_PROGRESS",
     priority: "LOW",
@@ -39,7 +39,7 @@ export const tasks: Task[] = [
   },
   {
     id: "5",
-    title: "Test yolo",
+    title: "Test yolo 5",
     description: "Une description de task 5",
     status: "DONE",
     priority: "MEDIUM",
@@ -48,7 +48,7 @@ export const tasks: Task[] = [
   },
   {
     id: "6",
-    title: "Test yolo",
+    title: "Test yolo 6",
     description: null,
     status: "TODO",
     priority: "MEDIUM",

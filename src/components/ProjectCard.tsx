@@ -1,41 +1,39 @@
 // src/components/ProjectCard.tsx
-import { ROLE_LABELS, STATUS_LABELS, TASK_STATUSES } from "../data/labels.ts";
-import type { Project } from "../types/api.ts";
-import styles from "./ProjectCard.module.css";
+import type { Project, ProjectRole } from "../types/api.ts";
+import { ROLE_LABELS } from "../data/labels.ts";
+import Card from "./ui/Card.tsx";
+import Badge, { type BadgeTone } from "./ui/Badge.tsx";
+import Button from "./ui/Button.tsx";
+
+// Constante de module : créée une fois, pas à chaque rendu (rappel 1.1)
+const ROLE_TONES: Record<ProjectRole, BadgeTone> = {
+  OWNER: "info",
+  EDITOR: "success",
+  VIEWER: "neutral",
+};
 
 type ProjectCardProps = {
   project: Project;
+  onSelect: (projectId: Project["id"]) => void; // suit le type de l'id, quel qu'il soit
 };
 
-export default function ProjectCard({ project }: ProjectCardProps) {
-  // Calculé pendant le rendu : une simple variable dérivée des props (le « computed » de React, détaillé en 1.6)
-  const total = TASK_STATUSES.reduce((sum, status) => sum + project.taskCounts[status], 0);
-
+export default function ProjectCard({ project, onSelect }: ProjectCardProps) {
   return (
-    <article className={styles.card}>
-      <header className={styles.header}>
-        <h2 className={styles.title}>{project.name}</h2>
-        {/* className n'accepte qu'une chaîne : on compose les deux classes à la main */}
-        <span className={`${styles.role} ${styles[project.role]}`}>{ROLE_LABELS[project.role]}</span>
-      </header>
-
-      {/* && avec une chaîne ou null à gauche : sans risque, null n'affiche rien */}
-      {project.description && <p className={styles.description}>{project.description}</p>}
-
-      {/* Ternaire : deux branches. Surtout pas `total && …`, qui afficherait « 0 » */}
-      {total > 0 ? (
-        <dl className={styles.counts}>
-          {TASK_STATUSES.map((status) => (
-            // Le <div> regroupe dt/dd (HTML valide dans un dl) et porte la key
-            <div key={status}>
-              <dt>{STATUS_LABELS[status]}</dt>
-              <dd>{project.taskCounts[status]}</dd>
-            </div>
-          ))}
-        </dl>
-      ) : (
-        <p className={styles.empty}>Aucune tâche</p>
-      )}
-    </article>
+    <Card
+      title={project.name}
+      footer={
+        <Button
+          variant="secondary"
+          onClick={() => onSelect(project.id)} // une fonction, pas un appel
+          // relayé par ...rest ; commence par le texte visible (critère RGAA du nom accessible)
+          aria-label={`Ouvrir le projet ${project.name}`}
+        >
+          Ouvrir
+        </Button>
+      }
+    >
+      <Badge tone={ROLE_TONES[project.role]}>{ROLE_LABELS[project.role]}</Badge>
+      {project.description && <p>{project.description}</p>}
+    </Card>
   );
 }

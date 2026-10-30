@@ -1,0 +1,29 @@
+.siteHeader {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+}
+.brand {
+  margin: 0;
+  font-weight: 700;
+}
+.main {
+  padding: 2rem;
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+.pageHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.title {
+  margin: 0;
+}
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
