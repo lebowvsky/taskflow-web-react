@@ -23,3 +23,11 @@
   color: inherit;
   border-color: currentColor;
 }
+
+/* src/components/ui/Button.module.css */
+.button[aria-pressed="true"] {
+  background: currentColor;
+  /* adapte à tes variantes : l'important est que l'état soit visible sans la couleur seule */
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
