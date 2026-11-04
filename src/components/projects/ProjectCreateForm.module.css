@@ -1,0 +1,32 @@
+/* src/components/projects/ProjectCreateForm.module.css */
+.form {
+  display: grid;
+  gap: 1rem;
+  max-width: 36rem;
+  margin-block-end: 2rem;
+}
+.title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+.field {
+  display: grid;
+  gap: 0.25rem;
+}
+.hint {
+  margin: 0;
+  font-size: 0.875rem;
+}
+.error {
+  margin: 0;
+  font-weight: 700;
+  color: light-dark(#ce0500, #ff5655); /* rouges d'erreur du DSFR, clair et sombre */
+}
+.field :is(input, textarea)[aria-invalid="true"] {
+  outline: 2px solid light-dark(#ce0500, #ff5655);
+  outline-offset: 1px;
+}
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}

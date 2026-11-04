@@ -6,4 +6,5 @@ import ProjectsPage from "./pages/ProjectsPage";
 export default function App() {
   // Une seule page affichée à la fois en attendant React Router (3.1)
   return <ProjectDetailPage project={projects[0]} />;
+  // return <ProjectsPage />;
 }

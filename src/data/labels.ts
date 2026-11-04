@@ -21,3 +21,11 @@ export const PRIORITY_LABELS: Record<TaskPriority, string> = {
 
 // Ordre d'affichage explicite (Object.keys ne garantit rien de lisible pour un humain)
 export const TASK_STATUSES: readonly TaskStatus[] = ["TODO", "IN_PROGRESS", "DONE"];
+
+// src/data/labels.ts (ajout)
+export const TASK_PRIORITIES = ["LOW", "MEDIUM", "HIGH"] as const satisfies readonly TaskPriority[];
+
+// Garde de type : remplace le cast par une vérification réelle
+export function isTaskPriority(value: string): value is TaskPriority {
+  return (TASK_PRIORITIES as readonly string[]).includes(value);
+}
