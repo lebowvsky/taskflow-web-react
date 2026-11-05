@@ -56,9 +56,8 @@ export default function TaskCreateForm({ onCreate }: TaskCreateFormProps) {
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const id = useId();
 
-  // Lire l'horloge pendant le rendu n'est pas strictement pur (voir 1.5) ;
-  // c'est acceptable ici, la valeur ne change qu'à minuit.
-  const today = toLocalIsoDate(new Date());
+  // Lu une fois, au montage : ensuite le rendu ne dépend que des props et de l'état
+  const [today] = useState(() => toLocalIsoDate(new Date()));
   const errors = validate(values, today);
   const shownErrors: TaskFormErrors = hasSubmitted ? errors : {};
 
