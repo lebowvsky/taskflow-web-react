@@ -57,7 +57,6 @@ export default function ProjectDetailPage({ project }: ProjectDetailPageProps) {
     );
   }
 
-  // Retour anticipé APRÈS tous les hooks : règles des hooks respectées
   return (
     <PageLayout title={project.name}>
       <p className={styles.count}>{summary}</p>

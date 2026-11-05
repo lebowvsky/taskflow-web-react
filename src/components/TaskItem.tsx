@@ -2,12 +2,13 @@
 import { PRIORITY_LABELS, STATUS_LABELS } from "../data/labels.ts";
 import type { Task } from "../types/api.ts";
 import styles from "./TaskItem.module.css";
+import VisuallyHidden from "./ui/VisuallyHidden.tsx";
 
 const dueDateFormatter = new Intl.DateTimeFormat("fr-FR", { dateStyle: "long" });
 
 type TaskItemProps = {
   task: Task;
-  onToggleDone: () => void;
+  onToggleDone: (taskId: Task["id"]) => void;
 };
 
 export default function TaskItem({ task, onToggleDone }: TaskItemProps) {
@@ -24,7 +25,7 @@ export default function TaskItem({ task, onToggleDone }: TaskItemProps) {
         <input id={checkboxId} type="checkbox" checked={isDone} onChange={() => onToggleDone(id)} />
         {/* Nom accessible : « Terminée : <titre> », unique dans la liste des champs */}
         <label htmlFor={checkboxId}>
-          Terminée<span className={styles.srOnly}> : {title}</span>
+          Terminée<VisuallyHidden> : {title}</VisuallyHidden>
         </label>
       </div>
       <p className={styles.tags}>
